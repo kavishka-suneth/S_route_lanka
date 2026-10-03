@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notifications | SmartRoute Lanka Admin</title>
+  <meta name="theme-color" content="#155bd7">
+  <link rel="icon" type="image/svg+xml" href="/assets/smartroute-mark.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/premium.css">
+  <script defer src="/js/config.js"></script>
+  <script defer src="/js/auth.js"></script>
+  <script defer src="/js/api.js"></script>
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/premium.js"></script>
+  <script defer src="/js/admin.js"></script>
+</head>
+<body data-admin-page="notifications">
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+  <div class="admin-layout">
+    <div id="adminNav"></div>
+    <main id="mainContent" class="admin-content">
+      <div class="page-title premium-admin-heading"><span class="mini-label">Admin / Communication</span><h1>Notifications</h1><p>Keep your passengers informed, every step of the journey.</p></div>
+      <div id="pageAlert"></div>
+      <div class="premium-notifications">
+        <section class="card premium-compose">
+          <div class="premium-compose-header"><div><h2>Compose notification</h2><p>Choose your audience, write your message, and send.</p></div><span class="premium-compose-icon" data-icon="send" aria-hidden="true"></span></div>
+          <form id="manualNotificationForm" class="form-grid" novalidate>
+            <div class="premium-form-heading"><span>01</span> Choose your audience</div>
+            <div class="form-row full"><label>Send to<select name="targetType"></select></label></div>
+            <input name="targetId" type="hidden"><input name="targetIds" type="hidden">
+            <div class="form-row full"><div id="notificationTargetPanel" class="target-panel"></div><div id="notificationTargetError" class="field-error" role="alert"></div></div>
+            <div class="premium-form-heading"><span>02</span> Write your message</div>
+            <div class="form-row full"><label>Title<input name="title" maxlength="160" placeholder="A short, clear headline" required></label></div>
+            <div class="form-row full"><label>Message<textarea name="message" maxlength="2000" placeholder="What would you like your passengers to know?" required></textarea></label></div>
+            <div class="premium-form-heading"><span>03</span> Notification details</div>
+            <div class="form-row"><label>Type<select name="notificationType"></select></label></div>
+            <div class="form-row"><label>Category<select name="category"></select></label></div>
+            <div class="form-row"><label>Priority<select name="priority"><option>NORMAL</option><option>HIGH</option><option>CRITICAL</option><option>LOW</option></select></label></div>
+            <div class="form-row full"><label>Action URL <span class="field-helper">Optional destination for the notification action.</span><input name="actionUrl" maxlength="300" placeholder="/my-bookings.html"></label></div>
+            <div class="form-row full actions"><button id="sendNotificationButton" class="btn btn-primary" type="submit">Send notification</button><a class="btn btn-ghost" href="#notificationHistory" data-icon="bell">View history</a></div>
+          </form>
+        </section>
+        <section class="card premium-preview" aria-label="Passenger notification preview">
+          <div><h2>Passenger preview</h2><p class="muted">See how your title and message will read.</p></div>
+          <div class="premium-notification-preview"><span class="premium-preview-brand" data-icon="bell">SmartRoute Lanka</span><h3 id="premiumPreviewTitle">Notification title</h3><p id="premiumPreviewMessage">Your message will appear here as you type.</p></div>
+        </section>
+        <section id="notificationHistory" class="premium-history">
+          <h2>Notification history</h2>
+          <div class="toolbar"><label>Status<select id="notificationStatusFilter" aria-label="Status filter"><option value="">All statuses</option><option value="SENT">Sent</option><option value="READ">Read</option><option value="FAILED">Failed</option><option value="SKIPPED">Skipped</option></select></label></div>
+          <div id="adminTable"></div><div id="adminPagination" class="pagination"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

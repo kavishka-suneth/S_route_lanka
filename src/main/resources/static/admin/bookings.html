@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookings | SmartRoute Lanka</title>
+  <meta name="theme-color" content="#155bd7">
+  <link rel="icon" type="image/svg+xml" href="/assets/smartroute-mark.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/premium.css">
+  <script defer src="/js/config.js"></script><script defer src="/js/auth.js"></script><script defer src="/js/api.js"></script><script defer src="/js/common.js"></script>
+  <script defer src="/js/premium.js"></script><script defer src="/js/admin.js"></script>
+  <noscript><style>.sr-page-loader{display:none!important}</style></noscript>
+</head>
+<body data-admin-page="bookings">
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+  <div id="srPageLoader" class="sr-page-loader" role="status" aria-live="polite" aria-label="Loading SmartRoute Lanka">
+    <div class="sr-loader-card">
+      <div class="sr-loader-brand"><img src="/assets/smartroute-mark.svg" width="44" height="44" alt=""><span>SmartRoute<small>LANKA</small></span></div>
+      <div class="sr-loader-scene" aria-hidden="true">
+        <div class="sr-loader-hills"></div><div class="sr-loader-sun"></div>
+        <div class="sr-loader-bus"><svg viewBox="0 0 180 90" fill="none"><path d="M18 15h122c15 0 25 8 27 22l4 28H10V27c0-7 3-12 8-12Z" fill="#155bd7"/><path d="M22 24h102v23H22z" fill="#cce6ff"/><path d="M132 24h9c10 0 15 6 17 17l1 6h-27V24Z" fill="#93c9ec"/><path d="M46 24v23m26-23v23m26-23v23" stroke="#155bd7" stroke-width="4"/><path d="M10 54h161v11H10z" fill="#0c3892"/><path d="M134 49v16m-8-16v16" stroke="#abcfff" stroke-width="2"/><rect x="164" y="50" width="8" height="5" rx="2" fill="#fff1b8"/><path d="M10 65h162" stroke="#dce9fa" stroke-width="4"/><g class="sr-wheel-left"><circle cx="40" cy="68" r="13" fill="#102c47"/><circle cx="40" cy="68" r="6" fill="#c5d6e4"/><path d="M40 62v12m-6-6h12" stroke="#617a91" stroke-width="2"/></g><g class="sr-wheel-right"><circle cx="144" cy="68" r="13" fill="#102c47"/><circle cx="144" cy="68" r="6" fill="#c5d6e4"/><path d="M144 62v12m-6-6h12" stroke="#617a91" stroke-width="2"/></g></svg></div>
+        <div class="sr-loader-road"></div>
+      </div>
+      <div class="sr-loader-copy"><strong>A good journey starts here.</strong><span>Getting things ready for you</span></div>
+      <div class="sr-loader-progress" aria-hidden="true"><span></span></div>
+      <p class="sr-loader-caption">YOUR NEXT STOP, MADE SIMPLE</p>
+    </div>
+  </div>
+
+  <div class="admin-layout"><div id="adminNav"></div><main id="mainContent" class="admin-content">
+    <div class="page-title"><h1>Booking management</h1></div><div id="pageAlert"></div>
+    <div class="toolbar">
+      <div class="form-row"><label for="bookingKeyword">Search bookings</label><input id="bookingKeyword" type="search" placeholder="Reference, passenger, route"></div>
+      <div class="form-row"><label for="bookingStatusFilter">Status</label><select id="bookingStatusFilter"></select></div>
+      <button class="btn btn-ghost" id="refreshBookingsBtn" type="button">Refresh</button>
+    </div>
+    <div id="adminTable"></div><div id="adminPagination" class="pagination"></div>
+    <section class="card">
+      <form id="bookingLookupForm" class="form-grid" novalidate>
+        <div class="form-row"><label for="bookingId">Booking ID</label><input id="bookingId" name="bookingId" type="number" min="1" required></div>
+        <div class="form-row" style="align-self:end"><button class="btn btn-primary" type="submit">View booking</button></div>
+      </form>
+    </section>
+    <section class="section"><div id="lookupResult"></div></section>
+  </main></div>
+</body>
+</html>

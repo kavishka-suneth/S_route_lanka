@@ -1,0 +1,10 @@
+package lk.smartroute.model;
+
+public enum StaffType {
+    CUSTOMER_SERVICE_STAFF,
+    TRANSPORT_COORDINATOR,
+    FINANCE_OFFICER,
+    OPERATIONS_MANAGER,
+    SYSTEM_ADMINISTRATOR,
+    IT_SUPPORT_STAFF
+}

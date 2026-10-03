@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports | SmartRoute Lanka</title>
+  <meta name="theme-color" content="#155bd7">
+  <link rel="icon" type="image/svg+xml" href="/assets/smartroute-mark.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/premium.css">
+  <script defer src="/js/config.js"></script><script defer src="/js/auth.js"></script><script defer src="/js/api.js"></script><script defer src="/js/common.js"></script>
+  <script defer src="/js/premium.js"></script><script defer src="/js/admin.js"></script>
+  <noscript><style>.sr-page-loader{display:none!important}</style></noscript>
+</head>
+<body data-admin-page="reports">
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+  <div id="srPageLoader" class="sr-page-loader" role="status" aria-live="polite" aria-label="Loading SmartRoute Lanka">
+    <div class="sr-loader-card">
+      <div class="sr-loader-brand"><img src="/assets/smartroute-mark.svg" width="44" height="44" alt=""><span>SmartRoute<small>LANKA</small></span></div>
+      <div class="sr-loader-scene" aria-hidden="true">
+        <div class="sr-loader-hills"></div><div class="sr-loader-sun"></div>
+        <div class="sr-loader-bus"><svg viewBox="0 0 180 90" fill="none"><path d="M18 15h122c15 0 25 8 27 22l4 28H10V27c0-7 3-12 8-12Z" fill="#155bd7"/><path d="M22 24h102v23H22z" fill="#cce6ff"/><path d="M132 24h9c10 0 15 6 17 17l1 6h-27V24Z" fill="#93c9ec"/><path d="M46 24v23m26-23v23m26-23v23" stroke="#155bd7" stroke-width="4"/><path d="M10 54h161v11H10z" fill="#0c3892"/><path d="M134 49v16m-8-16v16" stroke="#abcfff" stroke-width="2"/><rect x="164" y="50" width="8" height="5" rx="2" fill="#fff1b8"/><path d="M10 65h162" stroke="#dce9fa" stroke-width="4"/><g class="sr-wheel-left"><circle cx="40" cy="68" r="13" fill="#102c47"/><circle cx="40" cy="68" r="6" fill="#c5d6e4"/><path d="M40 62v12m-6-6h12" stroke="#617a91" stroke-width="2"/></g><g class="sr-wheel-right"><circle cx="144" cy="68" r="13" fill="#102c47"/><circle cx="144" cy="68" r="6" fill="#c5d6e4"/><path d="M144 62v12m-6-6h12" stroke="#617a91" stroke-width="2"/></g></svg></div>
+        <div class="sr-loader-road"></div>
+      </div>
+      <div class="sr-loader-copy"><strong>A good journey starts here.</strong><span>Getting things ready for you</span></div>
+      <div class="sr-loader-progress" aria-hidden="true"><span></span></div>
+      <p class="sr-loader-caption">YOUR NEXT STOP, MADE SIMPLE</p>
+    </div>
+  </div>
+
+  <div class="admin-layout"><div id="adminNav"></div><main id="mainContent" class="admin-content">
+    <div class="page-title"><h1>Reports</h1><button id="exportSummaryBtn" class="btn btn-primary" type="button">Export summary CSV</button></div><div id="pageAlert"></div>
+    <section class="card">
+      <h2>Revenue by date range</h2>
+      <form id="revenueRangeForm" class="form-grid three" novalidate>
+        <div class="form-row"><label for="from">From</label><input id="from" name="from" type="datetime-local" required></div>
+        <div class="form-row"><label for="to">To</label><input id="to" name="to" type="datetime-local" required></div>
+        <div class="form-row" style="align-self:end"><button class="btn btn-primary" type="submit">Run report</button></div>
+      </form>
+      <div id="rangeRevenue" style="margin-top:16px"></div>
+    </section>
+    <section class="section"><div id="reportsSummary"></div></section>
+    <section><div id="occupancyReport"></div></section>
+    <section class="card">
+      <h2>Ticket sales report</h2>
+      <form id="ticketSalesForm" class="form-grid three" novalidate>
+        <div class="form-row"><label for="ticketFrom">From</label><input id="ticketFrom" name="from" type="date"></div>
+        <div class="form-row"><label for="ticketTo">To</label><input id="ticketTo" name="to" type="date"></div>
+        <div class="form-row"><label for="ticketRouteId">Route ID</label><input id="ticketRouteId" name="routeId" type="number" min="1" placeholder="All routes"></div>
+        <div class="form-row"><label for="ticketScheduleId">Schedule ID</label><input id="ticketScheduleId" name="scheduleId" type="number" min="1" placeholder="All schedules"></div>
+        <div class="form-row" style="align-self:end"><button class="btn btn-primary" type="submit">Run report</button></div>
+        <div class="form-row" style="align-self:end"><button id="exportTicketSalesBtn" class="btn btn-ghost" type="button">Export CSV</button></div>
+      </form>
+      <div id="ticketSalesReport" style="margin-top:16px"></div>
+    </section>
+    <section class="card">
+      <h2>Occupancy report</h2>
+      <form id="occupancyDetailsForm" class="form-grid three" novalidate>
+        <div class="form-row"><label for="occupancyFrom">From</label><input id="occupancyFrom" name="from" type="date"></div>
+        <div class="form-row"><label for="occupancyTo">To</label><input id="occupancyTo" name="to" type="date"></div>
+        <div class="form-row"><label for="occupancyTravelDate">Travel date</label><input id="occupancyTravelDate" name="travelDate" type="date"></div>
+        <div class="form-row"><label for="occupancyRoute">Route</label><input id="occupancyRoute" name="route" type="text" maxlength="120" placeholder="Origin or destination"></div>
+        <div class="form-row"><label for="occupancyRouteId">Route ID</label><input id="occupancyRouteId" name="routeId" type="number" min="1" placeholder="All routes"></div>
+        <div class="form-row"><label for="occupancyScheduleId">Schedule ID</label><input id="occupancyScheduleId" name="scheduleId" type="number" min="1" placeholder="All schedules"></div>
+        <div class="form-row" style="align-self:end"><button class="btn btn-primary" type="submit">Run report</button></div>
+      </form>
+      <div id="occupancyDetailsReport" style="margin-top:16px"></div>
+    </section>
+    <section class="card">
+      <h2>Management report</h2>
+      <form id="managementReportForm" class="form-grid three" novalidate>
+        <div class="form-row"><label for="managementFrom">From</label><input id="managementFrom" name="from" type="datetime-local"></div>
+        <div class="form-row"><label for="managementTo">To</label><input id="managementTo" name="to" type="datetime-local"></div>
+        <div class="form-row" style="align-self:end"><button class="btn btn-primary" type="submit">Run report</button></div>
+        <div class="form-row" style="align-self:end"><button id="exportManagementBtn" class="btn btn-ghost" type="button">Export CSV</button></div>
+      </form>
+      <div id="managementReport" style="margin-top:16px"></div>
+    </section>
+    <section class="card">
+      <h2>Financial report</h2>
+      <form id="financialReportForm" class="form-grid three" novalidate>
+        <div class="form-row"><label for="financialFrom">From</label><input id="financialFrom" name="from" type="datetime-local"></div>
+        <div class="form-row"><label for="financialTo">To</label><input id="financialTo" name="to" type="datetime-local"></div>
+        <div class="form-row" style="align-self:end"><button class="btn btn-primary" type="submit">Run report</button></div>
+        <div class="form-row" style="align-self:end"><button id="exportFinancialBtn" class="btn btn-ghost" type="button">Export CSV</button></div>
+      </form>
+      <div id="financialReport" style="margin-top:16px"></div>
+    </section>
+  </main></div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+-- No-op compatibility migration.
+-- The current V6 wallet/card/OTP migration creates otp_verifications with
+-- email, operation_key, last_sent_at, used, and verified columns already.

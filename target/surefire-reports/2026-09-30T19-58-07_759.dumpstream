@@ -1,0 +1,5 @@
+# Created at 2026-09-30T19:58:07.974
+Boot Manifest-JAR contains absolute paths in classpath 'D:\smartroute-backend\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

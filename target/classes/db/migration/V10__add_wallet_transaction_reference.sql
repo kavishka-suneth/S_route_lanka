@@ -1,0 +1,2 @@
+-- No-op compatibility migration.
+-- The current V6 wallet migration creates wallet_transactions.transaction_reference.

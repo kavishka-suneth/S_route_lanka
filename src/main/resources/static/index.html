@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartRoute Lanka</title>
+  <meta name="theme-color" content="#155bd7">
+  <link rel="icon" type="image/svg+xml" href="/assets/smartroute-mark.svg">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/premium.css">
+  <script defer src="/js/config.js"></script>
+  <script defer src="/js/auth.js"></script>
+  <script defer src="/js/api.js"></script>
+  <script defer src="/js/common.js"></script>
+  <script defer src="/js/premium.js"></script>
+  <script defer src="/js/schedules.js"></script>
+  <noscript><style>.sr-page-loader{display:none!important}</style></noscript>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+  <div id="srPageLoader" class="sr-page-loader" role="status" aria-live="polite" aria-label="Loading SmartRoute Lanka">
+    <div class="sr-loader-card">
+      <div class="sr-loader-brand"><img src="/assets/smartroute-mark.svg" width="44" height="44" alt=""><span>SmartRoute<small>LANKA</small></span></div>
+      <div class="sr-loader-scene" aria-hidden="true">
+        <div class="sr-loader-hills"></div><div class="sr-loader-sun"></div>
+        <div class="sr-loader-bus"><svg viewBox="0 0 180 90" fill="none"><path d="M18 15h122c15 0 25 8 27 22l4 28H10V27c0-7 3-12 8-12Z" fill="#155bd7"/><path d="M22 24h102v23H22z" fill="#cce6ff"/><path d="M132 24h9c10 0 15 6 17 17l1 6h-27V24Z" fill="#93c9ec"/><path d="M46 24v23m26-23v23m26-23v23" stroke="#155bd7" stroke-width="4"/><path d="M10 54h161v11H10z" fill="#0c3892"/><path d="M134 49v16m-8-16v16" stroke="#abcfff" stroke-width="2"/><rect x="164" y="50" width="8" height="5" rx="2" fill="#fff1b8"/><path d="M10 65h162" stroke="#dce9fa" stroke-width="4"/><g class="sr-wheel-left"><circle cx="40" cy="68" r="13" fill="#102c47"/><circle cx="40" cy="68" r="6" fill="#c5d6e4"/><path d="M40 62v12m-6-6h12" stroke="#617a91" stroke-width="2"/></g><g class="sr-wheel-right"><circle cx="144" cy="68" r="13" fill="#102c47"/><circle cx="144" cy="68" r="6" fill="#c5d6e4"/><path d="M144 62v12m-6-6h12" stroke="#617a91" stroke-width="2"/></g></svg></div>
+        <div class="sr-loader-road"></div>
+      </div>
+      <div class="sr-loader-copy"><strong>A good journey starts here.</strong><span>Getting things ready for you</span></div>
+      <div class="sr-loader-progress" aria-hidden="true"><span></span></div>
+      <p class="sr-loader-caption">YOUR NEXT STOP, MADE SIMPLE</p>
+    </div>
+  </div>
+
+  <div id="siteNav"></div>
+  <main id="mainContent">
+    <section class="travel-hero">
+      <img class="hero-photo" src="/assets/bus-hero.webp" alt="A blue and white bus travelling through Sri Lanka's green hill country" fetchpriority="high" width="1942" height="809">
+      <div class="hero-shade"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <div class="hero-kicker"><span></span> A BETTER WAY TO GET THERE</div>
+          <h1>Less planning.<br>More <em>journey.</em></h1>
+          <p>From familiar roads to new adventures.<br>Find your bus, choose your seat, and go.</p>
+          <a class="hero-link" href="#journeySearch">Your next stop starts here <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a>
+        </div>
+        <div class="hero-location"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg> <span>Made for journeys across<br><strong>Sri Lanka</strong></span></div>
+      </div>
+      <div id="journeySearch" class="hero-search-shell"><form id="homeSearchForm" class="search-panel" novalidate>
+  <div class="search-panel-heading"><span>Find your next journey</span><span class="search-panel-note">One way · Your seat, your choice</span></div>
+  <div class="form-row"><label for="origin">From</label><div class="input-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><input id="origin" name="origin" type="text" autocomplete="address-level2" placeholder="Departure city" required></div><span class="field-error" data-error-for="origin"></span></div>
+  <div class="form-row"><label for="destination">To</label><div class="input-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><input id="destination" name="destination" type="text" autocomplete="address-level2" placeholder="Where are you going?" required></div><span class="field-error" data-error-for="destination"></span></div>
+  <div class="form-row"><label for="date">Travel date</label><div class="input-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-13 4h2m4 0h2"/></svg><input id="date" name="date" type="date" required></div><span class="field-error" data-error-for="date"></span></div>
+  <div class="form-row form-row-submit"><button class="btn btn-primary btn-search" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg> Search buses <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button></div>
+</form></div>
+    </section>
+    <div class="benefits-strip page-shell">
+      <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="5" r="2"/><circle cx="18" cy="19" r="2"/><path d="M8 5h8a4 4 0 0 1 0 8H8a3 3 0 0 0 0 6h8"/></svg> Find your route</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v12a4 4 0 0 0 4 4h11M8 4h5v8H8m0 0v4h10v-4H8M7 19v3m11-3v3"/></svg> Pick your favourite seat</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="17" rx="4"/><path d="M4 11h16M9 3v8M7 20v2m10-2v2M7 15h1m8 0h1"/></svg> Keep your ticket handy</span><span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-3a8 8 0 0 1 16 0v3m-16-1H2v7h5v-7H4m16 0h2v7h-5v-7h3m-3 7c0 2-3 2-5 2"/></svg> Help along the way</span>
+    </div>
+    <section class="section page-shell">
+      <div class="page-title"><div><span class="mini-label">A LITTLE INSPIRATION</span><h2>Where to next?</h2><p class="section-lead">City days, coastal escapes, and a change of scenery.</p></div><a class="text-link" href="#journeySearch">Plan a journey <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></div>
+      <div class="destination-grid">
+        <article class="destination-card destination-hills"><div class="destination-art" aria-hidden="true"><span class="landform one"></span><span class="landform two"></span><span class="landform three"></span><span class="art-sun"></span><span class="art-line"></span></div><div class="destination-content"><span class="destination-tag">THE HILL COUNTRY</span><h3>Kandy</h3><p>From Colombo</p><span class="destination-caption">A slower pace. A greener view.</span></div></article>
+        <article class="destination-card destination-city"><div class="destination-art" aria-hidden="true"><span class="city-building one"></span><span class="city-building two"></span><span class="city-building three"></span><span class="city-building four"></span><span class="art-sun"></span></div><div class="destination-content"><span class="destination-tag">THE CITY CALLING</span><h3>Colombo</h3><p>From Kurunegala</p><span class="destination-caption">Make a little time for the city.</span></div></article>
+        <article class="destination-card destination-coast"><div class="destination-art" aria-hidden="true"><span class="coast-wave one"></span><span class="coast-wave two"></span><span class="coast-wave three"></span><span class="art-sun"></span></div><div class="destination-content"><span class="destination-tag">SOUTHERN DAYS</span><h3>Matara</h3><p>From Galle</p><span class="destination-caption">Follow the coast a little further.</span></div></article>
+      </div>
+      <p class="route-note">Destination inspiration. Search your route and date for current schedules.</p>
+    </section>
+    <section class="schedules-section">
+      <div class="section page-shell">
+        <div class="page-title"><div><span class="mini-label live-label"><i></i> FROM THE TIMETABLE</span><h2>Your next departure</h2><p class="section-lead">Explore upcoming buses and choose a journey that fits.</p></div><a class="text-link" href="/search-results.html">Search schedules <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></div>
+        <div id="liveSchedules" class="feature-grid live-schedule-grid"><div class="empty-state"><span class="spinner"></span> Loading live schedules...</div></div>
+      </div>
+    </section>
+    <section class="section page-shell how-section">
+      <div class="how-intro"><span class="mini-label">SMALL STEPS. GREAT JOURNEYS.</span><h2>Out the door<br>in three simple steps.</h2><p class="section-lead">A little less organising.<br>A little more looking forward.</p><a class="text-link" href="#journeySearch">Let's get you there <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a></div>
+      <div class="how-steps">
+        <article class="how-step"><span class="step-number">01</span><div><h3>Find your bus</h3><p>Enter your cities and travel date. Compare the available departures.</p></div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></article>
+        <article class="how-step"><span class="step-number">02</span><div><h3>Make yourself comfortable</h3><p>Choose available seats and review your journey before booking.</p></div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v12a4 4 0 0 0 4 4h11M8 4h5v8H8m0 0v4h10v-4H8M7 19v3m11-3v3"/></svg></article>
+        <article class="how-step"><span class="step-number">03</span><div><h3>You're ready to go</h3><p>Complete your booking and keep your digital ticket close by.</p></div><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></article>
+      </div>
+    </section>
+    <section class="page-shell cta-section"><div class="promo-banner"><div><span class="mini-label">ALL YOUR JOURNEYS, TOGETHER</span><h2>Your next chapter<br>starts with a seat.</h2><p>Keep bookings, tickets, and travel updates in one place.</p></div><div class="promo-actions"><a class="btn btn-light" href="/register.html">Create an account <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></a><a class="promo-login" href="/login.html">Already travelling with us? Log in</a></div><div class="promo-route" aria-hidden="true"></div></div></section>
+  </main>
+  <div id="siteFooter"></div>
+</body>
+</html>
